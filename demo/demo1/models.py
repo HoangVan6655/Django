@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class User(AbstractUser):
     avatar = models.ImageField(upload_to='upload/%Y/%m')
@@ -36,7 +37,8 @@ class Lesson(ItemBase):
         unique_together = ('subject', 'course') #trong khoá học không trùng tên bài học
         # db_table = '...' phương thức đổi tên bảng
 
-    content = models.TextField()
+    # content = models.TextField()
+    content = RichTextField()
     course = models.ForeignKey(Course, related_name="lessons", on_delete=models.CASCADE)
     tags = models.ManyToManyField('Tag', blank=True, null=True)
 

@@ -12,16 +12,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name='course',
+            name='courses',
             options={'ordering': ['-id']},
         ),
         migrations.AddField(
-            model_name='course',
+            model_name='courses',
             name='image',
             field=models.ImageField(default=None, upload_to='courses/%Y/%m'),
         ),
         migrations.AlterUniqueTogether(
-            name='course',
+            name='courses',
             unique_together={('subject', 'category')},
         ),
         migrations.CreateModel(
@@ -34,10 +34,10 @@ class Migration(migrations.Migration):
                 ('update_date', models.DateTimeField(auto_now=True)),
                 ('active', models.BooleanField(default=True)),
                 ('content', models.TextField()),
-                ('course', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='demo1.course')),
+                ('courses', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='demo1.courses')),
             ],
             options={
-                'unique_together': {('subject', 'course')},
+                'unique_together': {('subject', 'courses')},
             },
         ),
     ]
