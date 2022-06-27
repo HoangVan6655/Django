@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include , re_path #import th include
 
 urlpatterns = [
-    path('', include('demo1.urls')),
+    path('', include('demo1.urls')), #khi truy cập vô thấy urls rỗng truy cập tiếp đường dẫn demo1.urls
     path('admin/', admin.site.urls),
+    #đường dẫn ckeditor
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 

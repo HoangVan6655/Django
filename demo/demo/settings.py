@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'demo1.apps.Demo1Config',
+    #định dạng màu sắc font chữ các thứ
     'ckeditor',
+    #định dạng upload hình ảnh
     'ckeditor_uploader'
 ]
 
@@ -77,6 +79,10 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangodb',
@@ -90,6 +96,7 @@ DATABASES = {
     }
 }
 
+#chỉ định bảng chứng thực
 AUTH_USER_MODEL = "demo1.User"
 
 # Password validation
@@ -127,7 +134,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+#cấu hình để lưu hình ảnh - trỏ tới vị trí project base_dir - kết hợp với đường dẫn bên models tạo ra theo năm tháng
 MEDIA_ROOT = '%s/demo1/static' % BASE_DIR
+#cấu hình để lưu hình ảnh cho ckeditor
 CKEDITOR_UPLOAD_PATH = 'lessons/'
 
 # Default primary key field type
