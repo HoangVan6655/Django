@@ -13,6 +13,7 @@ class User(AbstractUser):
 
 class Category(models.Model):
     # danh mục - phương thức kế thừa của python - mặc định sẽ lấy tên app_tên class model
+
     name = models.CharField(max_length=100, null=False, unique=True)
     # không được not null, tên là duy nhất không được trùng nhau
 

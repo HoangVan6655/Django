@@ -23,10 +23,10 @@ class LessonTagInLine(admin.StackedInline):
 #custom admin kế thừa lại modeladmin có sẵn của django
 class LessonAdmin(admin.ModelAdmin):
     #thêm css
-    # class Media:
-    #     css = {
-    #         'all': ('/static/css/main.css',)
-    #     }
+    class Media:
+        css = {
+            'all': ('/static/css/main.css',)
+        }
 
     form = LessonForm
     #thuộc tính quy định các trường sẽ hiển thị
